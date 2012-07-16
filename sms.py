@@ -37,17 +37,24 @@ else:
 		numbers = [line.strip() for line in f]
 		f.close()
 	# get message
-	message = sys.argv[3]
-	driver = login(config)
+	config['message'] = sys.argv[3]
+	# check password
+	try:
+		config['pass']
+	except KeyError:
+		# prompt passwort
+		config['pass'] = getpass.getpass()
+	config = login(config)
 	for i in range(len(numbers)):
 		# replace spaces from number
 		number = numbers[i].replace(' ', '')
 		if number.isdigit():
-			if send(driver, message, number):
-				print number + ": SMS was sent :)";
+			config['number'] = number
+			if send(config):
+				print number + ": SMS was sent :)"
 			else:
-				print number + ": SMS wasn't sent :(";
+				print number + ": SMS wasn't sent :("
 		else:
-			print number + ": malformed phone number :(";
+			print number + ": malformed phone number :("
 	# close browser session
-	driver.quit()
+	config['driver'].quit()
