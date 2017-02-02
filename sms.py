@@ -1,4 +1,4 @@
-import sys
+import os, sys
 
 if len(sys.argv) != 4:
 	print "NAME"
@@ -31,6 +31,7 @@ else:
 	if addressee.isdigit():
 		numbers = addressee,
 	else:
+		addressee = os.path.dirname(os.path.abspath(__file__)) + '/adr/' + addressee
 		f = open(addressee)
 		# http://stackoverflow.com/questions/3277503/python-read-file-line-by-line-into-array
 		numbers = [line.strip() for line in f]
