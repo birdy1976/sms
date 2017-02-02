@@ -1,2 +1,2 @@
 def conf():
-    return {'site': 'ch.coopmobile', 'user': 'foo', 'pass': 'bar'}
+    return {'site': 'ch.swisscom', 'user': 'your phone number', 'pass': 'your api key / client id'}

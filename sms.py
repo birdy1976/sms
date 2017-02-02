@@ -1,4 +1,3 @@
-from selenium import webdriver
 import sys
 
 if len(sys.argv) != 4:
@@ -12,9 +11,9 @@ if len(sys.argv) != 4:
 	print "       Create your profile(s) in the subfolder mod/conf"
 	print "ADDRESSEE:"
 	print "       A single number or a list of numbers in a file, e.g."
-	print "              0041761234567"
-	print "              0041771234567"
-	print "              0041781234567"
+	print "              41761234567"
+	print "              41771234567"
+	print "              41781234567"
 	print "MESSAGE:"
 	print "       The message you want to send, e.g."
 	print "              'Hello world :)'"
@@ -38,13 +37,7 @@ else:
 		f.close()
 	# get message
 	config['message'] = sys.argv[3]
-	# check password
-	try:
-		config['pass']
-	except KeyError:
-		# prompt passwort
-		config['pass'] = getpass.getpass()
-	config = login(config)
+	# send sms
 	for i in range(len(numbers)):
 		# replace spaces from number
 		number = numbers[i].replace(' ', '')
@@ -56,5 +49,3 @@ else:
 				print number + ": SMS wasn't sent :("
 		else:
 			print number + ": malformed phone number :("
-	# close browser session
-	config['driver'].quit()
