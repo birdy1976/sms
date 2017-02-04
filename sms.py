@@ -10,7 +10,7 @@ if len(sys.argv) != 4:
 	print "PROFILE:"
 	print "       Create your profile(s) in the subfolder mod/conf"
 	print "ADDRESSEE:"
-	print "       A single number or a list of numbers in a file, e.g."
+	print "       A single number or a list in a file in subfolder adr, e.g."
 	print "              41761234567"
 	print "              41771234567"
 	print "              41781234567"
