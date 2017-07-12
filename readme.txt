@@ -17,8 +17,8 @@ For Linux users:
 a) git clone git@github.com:birdy1976/sms.git
 b) curl -L https://github.com/birdy1976/sms/tarball/master | tar zx
 5. Copy mod/conf/sample.py and create your profile, e.g. myconf.py
-6. Add an alias to ~/.bashrc: alias sms='python /path/to/sms.py'
-7. Send your first SMS: sms myconf 41761234567 'Hello world :)'
+6. Add an alias to ~/.bashrc: alias sms='python /path/to/sms.py myconf'
+7. Send your first SMS: sms 41761234567 'Hello world :)'
 
 == Screenshots ==
 
