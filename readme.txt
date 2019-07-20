@@ -10,8 +10,8 @@ Send SMS (Short Message Service) messages from the command line interface (CLI)
 == Installation ==
 
 For Linux users:
-1. Register at https://api-developer.swisscom.com/
-2. „Add New API“ to configure SMS later in step 5
+1. Register at https://digital.swisscom.com
+2. Subscribe to the free „Text Messaging (SMS)“ (100 text messages per month)
 3. Open a terminal (e.g. ctrl+alt+t)
 4. To install SMS do a) or b)
 a) git clone git@github.com:birdy1976/sms.git
